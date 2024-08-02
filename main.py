@@ -2,8 +2,8 @@ import turtle
 from turtle import Turtle, Screen
 
 s = Screen()
-s.setup(1080, 600)
-s.screensize(1060, 550)
+s.setup(1000, 600)
+
 
 
 t = Turtle()

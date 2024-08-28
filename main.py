@@ -1,5 +1,5 @@
-import turtle
 from turtle import Turtle, Screen
+import time
 
 class Breakout_Game:
 
@@ -22,9 +22,13 @@ class Breakout_Game:
         self.paddle.sety(-250)
         self.paddle.showturtle()
 
-        # Activate tracking mouse pointer by paddle
-        self.follow_mouse()
-
+        # Create game ball
+        self.ball = Turtle()
+        self.ball.shape("circle")
+        self.ball.penup()
+        self.ball.shapesize(0.75)
+        self.ball.setx(0)
+        self.ball.sety(0)
 
     def follow_mouse(self):
         x, y = self.screen._root.winfo_pointerx() - self.screen.window_width() // 1.29, self.screen._root.winfo_pointery() - self.screen.window_height() // 1.4
@@ -33,7 +37,26 @@ class Breakout_Game:
         self.screen.update()
         self.screen.ontimer(self.follow_mouse, 10)
 
+    def ball_movement(self):
+        change_x = 0.1
+        change_y = 0.1
+        while True:
+            self.screen.update()
+            self.ball.setx(self.ball.xcor() + change_x)
+            self.ball.sety(self.ball.ycor() + change_y)
+
+            if self.ball.xcor() >= 485 or self.ball.xcor() <= -490:
+                change_x *= -1
+
+            if self.ball.ycor() >= 290:
+                change_y *= -1
+
+            if self.ball.ycor() <= -285 and (self.ball.xcor() - 60 < self.ball.xcor() < self.ball.xcor() + 60):
+                change_y *= -1
+
     def run_app(self):
+        self.follow_mouse()
+        self.ball_movement()
         self.screen.mainloop()
 
 if __name__ == "__main__":

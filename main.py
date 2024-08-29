@@ -37,6 +37,7 @@ class Breakout_Game:
         self.screen.update()
         self.screen.ontimer(self.follow_mouse, 10)
 
+
     def ball_movement(self):
         change_x = 0.1
         change_y = 0.1
@@ -54,16 +55,18 @@ class Breakout_Game:
             if self.ball.ycor() <= -285 and (self.ball.xcor() - 60 < self.ball.xcor() < self.ball.xcor() + 60):
                 change_y *= -1
 
+            # TODO 6: Change impact only in one point in paddle to all paddle size
+            if int(self.ball.xcor()) == int(self.paddle.xcor()) and int(self.ball.ycor()) == int(self.paddle.ycor()):
+                change_x *= -1
+                change_y *= -1
+
+
     def run_app(self):
         self.follow_mouse()
         self.ball_movement()
         self.screen.mainloop()
 
+
 if __name__ == "__main__":
     game = Breakout_Game()
     game.run_app()
-
-
-# TODO 3: Create the ball
-# TODO 4: Adjustment basic ball movement
-# TODO 5: Make contact and change moving direction

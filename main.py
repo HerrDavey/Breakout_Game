@@ -111,11 +111,9 @@ class Breakout_Game:
                     if abs(self.ball.xcor() - self.paddle.xcor()) >= 20:
                         change_x *= -1
 
-            # Czas trwania aktualnej klatki
             end_time = time.time()
             elapsed_time = end_time - start_time
 
-            # Jeśli klatka była szybsza niż oczekiwany czas (frame_duration), poczekaj
             if elapsed_time < frame_duration:
                 time.sleep(frame_duration - elapsed_time)
 

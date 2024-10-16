@@ -31,6 +31,6 @@ This project is a Python implementation of the classic Breakout Arcade game, cre
 - <b>PyCharm</b>
 
 <h2>Program walk-through:</h2>
-<b>YOUTUBE:</b>
 
-[![https://img.youtube.com/vi/qMHFlqAbqAk/0.jpg](https://img.youtube.com/vi/qMHFlqAbqAk/0.jpg)](https://www.youtube.com/watch?v=qMHFlqAbqAk)
+<br/><br/>
+<img src="https://i.imgur.com/S5fPYjs.png" height="80%" width="80%" alt="Picture of Contact form"/>

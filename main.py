@@ -96,6 +96,7 @@ class Breakout_Game:
                 change_x *= -1
 
             if self.ball.ycor() >= 290:
+
                 change_y *= -1
 
             if self.block_impact():
@@ -118,7 +119,7 @@ class Breakout_Game:
                 time.sleep(frame_duration - elapsed_time)
 
         if len(self.blocks) > 0:
-            messagebox.showinfo("DEFEAT!", "You won the Impossible Breakout Game! Congratulation!")
+            messagebox.showinfo("DEFEAT!", "The ball fall under the paddle! \n\nGAME OVER!")
             self.screen.exitonclick()
         else:
             messagebox.showinfo("YOU WON!")
